@@ -1,0 +1,832 @@
+<html>
+
+<head>
+<title>Destapa El Coro</title>
+
+<link rel="icon" type="image/png" href="http://miguelrivas.me/img/logo.png">
+<link rel="apple-touch-icon-precomposed" href="http://miguelrivas.me/img/logo.png">
+<link rel="apple-touch-icon" href="http://miguelrivas.me/img/logo.png">
+<meta name="msapplication-TileColor" content="#222">
+<meta name="msapplication-TileImage" content="http://miguelrivas.me/img/logo.png">
+
+<meta property="og:site_name" content="Miguel Rivas">
+<meta property="og:title" content="Destapa El Coro">
+<meta property="og:description" content="App Cerveza Presidente">
+<meta property="og:image" content="http://miguelrivas.me/img/pv_institucional_2015.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<style>
+
+/*div { border: 1px solid #f0a;}*/
+
+* {
+font-family: 'Montserrat', helvetica, verdana, arial;
+}
+
+body, html {
+margin: 0;
+padding: 0;
+background: url('img/pt_05.png') top left repeat;
+}
+
+a {
+text-decoration: none;
+display: inline-block;
+vertical-align: middle;
+}
+
+.logo {
+position: scroll;
+width: 225px;
+height: 220px;
+margin: 160px auto 20px auto;
+}
+
+.btn {
+background: none;
+position: scroll;
+width: 140px;
+border: 3px solid #03512f;
+-moz-border-radius: 3px;
+border-radius: 3px;
+color: #03512f;
+text-align: center;
+font-size: 12pt;
+margin: 9px auto auto auto;
+padding: 10px;
+cursor: pointer;
+}
+
+.btn:hover {
+background-color: #03512f;
+color: #fff;
+}
+
+.btn_n01 {
+font-size: 9pt;
+font-weight: 700;
+border: none;
+}
+
+.btn_n02 {
+font-size: 9pt;
+font-weight: 700;
+}
+
+.btn2 {
+background: none;
+position: scroll;
+width: 140px;
+border: 3px solid #fff;
+-moz-border-radius: 3px;
+border-radius: 3px;
+color: #fff;
+text-align: center;
+font-size: 10pt;
+margin: 9px auto auto auto;
+padding: 10px;
+cursor: pointer;
+}
+
+.btn2:hover {
+border: 3px solid #f9ed3b;
+color: #f9ed3b;
+}
+
+.btn3 {
+background: none;
+position: scroll;
+width: 275px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+border: none;
+color: #fff;
+text-align: center;
+font-size: 8pt;
+margin: 9px auto auto auto;
+cursor: pointer;
+}
+
+.btn3:hover {
+color: #f9ed3b;
+}
+
+.txt {
+background: #03512f;
+position: scroll;
+width: 200px;
+height: 30px;
+border: 3px solid #03512f;
+-moz-border-radius: 3px;
+border-radius: 3px;
+color: #fff;
+text-align: center;
+font-size: 10pt;
+}
+
+.txt2 {
+background: #fff;
+position: scroll;
+width: 170px;
+height: 42px;
+border: 3px solid #03512f;
+-moz-border-radius: 3px;
+border-radius: 3px;
+color: #03512f;
+text-align: center;
+font-size: 10pt;
+margin: 9px;
+}
+
+.winCode {
+background: #f9ed3b; 
+color: #000;
+cursor: pointer;
+}
+
+.txt_head {
+font-size: 12pt;
+text-transform: uppercase;
+font-weight: 700;
+letter-spacing: 1pt;
+}
+
+.txt_head2 {
+font-size: 18pt;
+letter-spacing: 10pt;
+font-weight: 400;
+}
+
+.txt_head3 {
+font-size: 12pt;
+letter-spacing: 8.5pt;
+font-weight: 400;
+}
+
+.txt_sub {
+font-size: 8pt;
+text-transform: uppercase;
+font-weight: 700;
+letter-spacing: 1pt;
+}
+
+#box_app {
+background: url('img/bk_01.png') top left no-repeat;
+width: 800px;
+height: 600px;
+position: relative;
+top:0;
+left:0;
+text-align: center;
+z-index: 0;
+margin: auto;
+overflow: hidden;
+}
+
+.box {
+width: 100%;
+height: 100%;
+color: #03512f;
+}
+
+.preview {
+background: #ffc600;
+width: 390px;
+border: 15px solid #03512f;
+-moz-border-radius: 25px;
+border-radius: 25px;
+color: #03512f;
+text-align: center;
+font-size: 30pt;
+margin: 30px auto 10px auto;
+padding: 15px;
+text-transform: uppercase;
+vertical-align: center;
+font-weight: 700;
+}
+
+.al_box {
+display: table-cell;
+}
+
+/* ------------------- Group Pop ------------------- */
+
+.pop {
+color: #fff;
+position: fixed;
+background: url('img/pt_05.png') repeat;
+background-position: 0 0;
+top:0;
+left:0;
+width: 100%;
+height: 100%;
+z-index: 3;
+
+font-weight: 400;
+font-size: 10pt;
+letter-spacing: 1pt;
+
+transform:background-position;
+-ms-transform:background-position; /* IE 9 */
+-webkit-transform:background-position; /* Opera, Chrome, and Safari */
+
+animation: an01 linear 5s infinite;
+-webkit-animation: an01 linear 5s infinite; /* Safari and Chrome */
+}
+
+@keyframes an01 { from {background-position: 0 0;} to {background-position: 85 0;} }
+@-webkit-keyframes an01 { from {background-position: 0 0;} to {background-position: 85 0;} }
+
+.NDP { display: none;}
+
+#pt1, #pt2 {
+position: absolute;
+width: 417px;
+height: 524px;
+background: url('img/pt_01.png') center center no-repeat;
+z-index: -1;
+display: none;
+}
+
+#pt3, #pt4 {
+position: absolute;
+width: 417px;
+height: 524px;
+background: url('img/pt_02.png') center center no-repeat;
+z-index: -1;
+display: none;
+}
+
+/* ------------------- Box 01 ------------------- */
+
+#pt1 { top:-250px; left:0; }
+#pt3 { top:-250px; right:0; }
+#pt2 { bottom:-220px; right:-100px; }
+#pt4 { bottom:-220px; left:-100px; }
+
+/* ------------------- Box 06 ------------------- */
+
+#box_06 {
+font-size: 8pt;
+}
+
+#box_06 #btn_01 {
+font-size: 10pt;
+width: 194px;
+padding: 0;
+margin: 0;
+margin-top: 14px;
+height: 24px;
+}
+
+/* ------------------- Box 07 ------------------- */
+
+#box_07 #btn_00 {
+width: 20px;
+padding: 2px;
+margin: 0;
+}
+
+#box_07 #fixSize {
+text-align: center;
+margin: auto;
+height: 132px;
+width: 500px;
+overflow-y: auto;
+}
+
+/* ------------------- Box 08 ------------------- */
+
+#box_08 {
+width: 50%;
+text-align: right;
+margin-left: 370px;
+}
+
+#box_08 #pt5{
+cursor: pointer;
+background: url('img/gran.png') center left no-repeat;
+height: 546px;
+width: 428px;
+position: absolute;
+z-index: -1;
+display: block;
+top:70;
+left:0;
+}
+
+/* ------------------- Box 10 ------------------- */
+
+#box_10 {
+font-weight: 700;
+}
+
+#box_10 .txt_head {
+letter-spacing: 5pt;
+}
+
+/* ------------------- Pop 02 ------------------- */
+
+#pop_02 .btn2 {
+width: 140px;
+}
+
+#pop_02 .txt_head {
+font-size: 24pt;
+}
+
+#pop_07, #pop_08, #pop_09 {
+text-align: center;
+}
+
+</style>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="js/jQueryRotate.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+/* ------------------- INTRO ------------------- */
+
+$('#pt1, #pt2, #pt3, #pt4').slideDown('slow');
+
+$('#box_01 #btn_01').click(function(){
+/* Entrar */
+$('#box_01').fadeOut('fast');
+$('#box_02').fadeIn('slow');
+/* Background Box_01 */
+$('#pt1, #pt2, #pt3, #pt4').hide('slow');
+});
+
+$('#box_02 #btn_01').click(function(){
+/* Acepto los permisos de la aplicacion */
+$('#box_02').fadeOut('fast');
+$('#box_03').fadeIn('slow');
+/* Background Box_02 */
+$('#pt1, #pt2, #pt3, #pt4').hide(0);
+$('#pt1').animate({top: 20}, 0).animate({left: 500}, 0).rotate(150);
+$('#pt3').animate({top: 20}, 0).animate({right: 500}, 0).rotate(-150);
+$('#pt1, #pt3').fadeIn(1000);
+});
+ 
+$('#box_03 #btn_01').click(function(){
+/* Like */
+$('#box_03').fadeOut('fast');
+$('#box_04').fadeIn('slow');
+/* Background Box_03 */
+//$('#pt1, #pt2, #pt3, #pt4').hide(0);
+//$('#pt1').animate({top: 320}, 0).animate({left: 590}, 0).rotate(15);
+$('#pt1').animate({top: 320, left: 590}, 500).rotate({angle:150, duration:1200,  animateTo:15});
+$('#pt3').animate({top: 320, right: 590}, 500).rotate({angle:-150, duration:1200,  animateTo:-15});
+
+
+
+
+//$('#pt3').animate({top: 320}, 0).animate({right: 590}, 0).rotate(-15);
+$('#pt2').animate({top: -250}, 0).animate({right: 600}, 0);
+$('#pt4').animate({top: -250}, 0).animate({left: 600}, 0);
+$('#pt1, #pt2, #pt3, #pt4').fadeIn('slow');
+$('.logo').animate({ 'marginTop': '20px'}, 1000);
+});
+
+$('#box_04 #btn_01').click(function(){
+/* Como Participar */
+$('#pop_01').fadeIn('slow');
+});
+
+
+$('#box_04 #btn_02').click(function(){
+$('#pop_02').fadeIn('slow');
+});
+
+$('#box_05 #btn_02').click(function(){
+/* Cedula */
+$('#pop_02').fadeIn('slow');
+});
+
+$('#box_06 #btn_01').click(function(){
+/* Aceptar */
+$('#box_06').fadeOut('fast');
+$('#box_07').fadeIn('slow');
+/* Background Box_07 */
+$('#pt1, #pt2, #pt3, #pt4').hide(0);
+$('.logo').animate({ 'marginTop': '20px'}, 500).animate({ 'marginBottom': '0px'}, 500);
+});
+
+$('#box_07 #btn_00').click(function(){
+/* Agregar */
+$('#pop_07').fadeIn('slow');
+});
+
+$('#pop_07 #btn_01').click(function(){
+/* Continuar */
+$('#pop_07').fadeOut('slow');
+$('#pop_08').fadeIn('slow');
+});
+
+$('#pop_08 #btn_01').click(function(){
+/* Continuar */
+$('#pop_08').fadeOut('slow');
+});
+
+$('#box_07 #btn_01').click(function(){
+/* Guardar Cambios */
+$('#pop_03').fadeIn('slow');
+});
+
+$('#box_07 #btn_02').click(function(){
+/* Como participar */
+$('#pop_01').fadeIn('slow');
+});
+
+$('#box_07 #btn_03').click(function(){
+/* Conoce los premios */
+$('.box, .pop').fadeOut('fast');
+$('#box_08').fadeIn('slow');
+/* Background Box_08 */
+$('#pt1, #pt2, #pt3, #pt4').hide(0);
+$('.logo').animate({ 'marginTop': '0px'}, 1000);
+});
+
+$('#box_08 #pt5').click(function(){
+/* gran premio final */
+$('#pop_04').fadeIn('slow');
+});
+
+$('#box_08 #btn_01').click(function(){
+/* Volver */
+$('#box_08').fadeOut('fast');
+$('#box_07').fadeIn('slow');
+/* Background Box_07 */
+$('#pt1, #pt2, #pt3, #pt4').hide(0);
+$('.logo').animate({ 'marginTop': '20px'}, 500).animate({ 'marginBottom': '0px'}, 500);
+});
+
+$('#box_09 #btn_02').click(function(){
+/* Volver */
+$('#box_09').fadeOut('fast');
+$('#box_10').fadeIn('slow');
+/* Background Box_07 */
+$('#pt1, #pt2, #pt3, #pt4').hide(0);
+$('.logo').animate({ 'marginTop': '20px'}, 500).animate({ 'marginBottom': '0px'}, 500);
+});
+
+$('#box_10 .btn').click(function(){
+/* Localidades */
+$('#pop_05').fadeIn('slow');
+});
+
+$('#pop_05 #btn_01').click(function(){
+/* Continuar */
+$('.box, .pop').fadeOut('fast');
+$('#box_07').fadeIn('slow');
+/* Background Box_07 */
+$('#pt1, #pt2, #pt3, #pt4').hide(0);
+$('.logo').animate({ 'marginTop': '20px'}, 500).animate({ 'marginBottom': '0px'}, 500);
+});
+
+
+$('#pop_01 #btn_01').click(function(){
+/* Como participar */
+$('#pop_01').fadeOut('slow');
+});
+
+$('#pop_02 #btn_01').click(function(){
+/* Entrar */
+$('.box, .pop').fadeOut('fast');
+$('#box_07').fadeIn('slow');
+/* Background Box_07 */
+$('#pt1, #pt2, #pt3, #pt4').hide(0);
+$('.logo').animate({ 'marginTop': '20px'}, 500).animate({ 'marginBottom': '0px'}, 500);
+});
+
+$('#pop_02 #btn_03, #box_04 #btn_03').click(function(){
+/* Crea tu perfil */
+$('.box, .pop').fadeOut('fast');
+$('#box_06').fadeIn('slow');
+/* Background Box_06 */
+$('#pt1, #pt2').hide(0);
+$('#pt3').hide(0).animate({top: -70}, 0).animate({right: 550}, 0).rotate(260);
+$('#pt4').hide(0).animate({top: 290}, 0).animate({left: 650}, 0).rotate(260);
+$('#pt4, #pt3').fadeIn('slow');
+$('.logo').animate({ 'marginTop': '20px'}, 1000);
+});
+
+$('#pop_03 #btn_01').click(function(){
+/* Continuar */
+$('#pop_03').fadeOut('slow');
+});
+
+$('#pop_04 #btn_01').click(function(){
+/* Como participar */
+$('#pop_04').fadeOut('slow');
+});
+
+$('.winCode').click(function(){
+/* Codigo Ganador */
+$('.box, .pop').fadeOut('fast');
+$('.logo').animate({ 'marginTop': '0px'}, 500);
+/*$('.logo').animate({ 'marginLeft': '400px'}, 500);*/
+$('#box_09').fadeIn('slow');
+/* Background Box_09 */
+$('#pt1, #pt2, #pt3, #pt4').hide(0);
+$('#pt2').animate({top: 400}, 0).animate({right: -150}, 0).rotate(50);
+$('#pt4').animate({top: 400}, 0).animate({left: -150}, 0).rotate(-50);
+$('#pt2, #pt4').fadeIn('slow');
+
+});
+
+});
+
+
+</script>
+
+</head>
+
+<body>
+<div id="box_app">
+
+<img src="img/logo.png" class="logo">
+
+<div id="pt1"></div>
+<div id="pt2"></div>
+<div id="pt3"></div>
+<div id="pt4"></div>
+
+<!-- **************************** box_01 ************************** -->
+
+<div id="box_01" class="box">
+<a href="#" class="btn" id="btn_01">ENTRAR</a>
+</div>
+
+<!-- **************************** box_02 ************************** -->
+
+<div id="box_02" class="box NDP">
+Acepto los permisos de la aplicaci&oacute;n
+<input type="checkbox" name="option2" id="btn_01">
+</div>
+
+<!-- **************************** box_03 ************************** -->
+
+<div id="box_03" class="box NDP">
+Dale like para continuar<br>
+<a href="#" class="btn" id="btn_01">Like</a>
+</div>
+
+<!-- **************************** box_04 ************************** -->
+
+<div id="box_04" class="box NDP">
+<br>
+<div class="txt_head">
+Destapa el coro para el festival presidente,<br>
+premios instant&aacute;neos y participar para<br>
+meets and greets y el gran premio final.
+</div>
+<br>
+<a href="#" class="btn btn_n02" id="btn_01">&#191;C&Oacute;MO PARTICIPAR?</a><br>
+<a href="#" class="btn btn_n02" id="btn_03">ACCEDER</a>
+</div>
+
+<!-- **************************** box_05 ************************** -->
+
+<div id="box_05" class="box NDP">
+<a href="#" class="btn" id="btn_01">FACEBOOK</a><br>
+<a href="#" class="btn" id="btn_02">C&Eacute;DULA</a><br>
+<a href="#" class="btn" id="btn_03">CREAR USUARIO</a>
+</div>
+
+<!-- **************************** box_06 ************************** -->
+
+<div id="box_06" class="box NDP">
+<div class="txt_head txt_head3">INTRODUCE TUS DATOS</div>
+<br><br>
+<div style="margin:auto; display:table;">
+<div style="width:210px; height:260px; display:table-cell; text-align:left;">
+NOMBRE COMPLETO<br>
+<input class="txt" id="tt_01" TYPE="text" tabindex=1><br>
+<br>
+CORREO ELECTR&Oacute;NICO<br>
+<input class="txt" id="tt_03" TYPE="text" tabindex=2><br>
+<br>
+CONTRASE&Ntilde;A<br>
+<input class="txt" id="tt_06" TYPE="text" tabindex=3><br>
+<br>
+VERIFICAR CONTRASE&Ntilde;A<br>
+<input class="txt" id="tt_07" TYPE="text" tabindex=4>
+</div>
+
+<div style="width:210px; height:260px; display:table-cell; text-align:left;">
+C&Eacute;DULA<br>
+<input class="txt" id="tt_02" TYPE="text" tabindex=5><br>
+<br>
+TEL&Eacute;FONO<br>
+<input class="txt" id="tt_04" TYPE="text" tabindex=6><br>
+<br>
+C&Eacute;LULAR<br>
+<input class="txt" id="tt_05" TYPE="text" tabindex=7><br>
+<br>
+<a href="#" class="btn" id="btn_01">ACEPTAR</a>
+</div>
+</div>
+</div>
+
+<!-- **************************** box_07 ************************** -->
+
+<div id="box_07" class="box NDP">
+<div class="txt_head">INSERTA<br>EL C&Oacute;DIGO</div>
+
+<input class="txt" id="tt_00" TYPE="text"><a href="#" class="btn" id="btn_00">+</a><br>
+<br>
+<div id="fixSize">
+<input class="txt" id="tt_01" TYPE="text" tabindex=1 READONLY>
+<input class="txt winCode" id="tt_02" TYPE="text" tabindex=2 READONLY>
+<br><br>
+<input class="txt winCode" id="tt_03" TYPE="text" tabindex=3 READONLY>
+<input class="txt" id="tt_04" TYPE="text" tabindex=4 READONLY>
+<br><br>
+<input class="txt" id="tt_05" TYPE="text" tabindex=5 READONLY>
+<input class="txt winCode" id="tt_06" TYPE="text" tabindex=6 READONLY>
+<br><br>
+<input class="txt" id="tt_07" TYPE="text" tabindex=7 READONLY>
+<input class="txt winCode" id="tt_08" TYPE="text" tabindex=8 READONLY>
+<br><br>
+<input class="txt winCode" id="tt_09" TYPE="text" tabindex=9 READONLY>
+<input class="txt" id="tt_10" TYPE="text" tabindex=10 READONLY>
+</div>
+<a href="#" class="btn btn_n02" id="btn_01">GUARDAR CAMBIOS</a>
+<br>
+<a href="#" class="btn btn_n01" id="btn_02">&#191;C&oacute;mo participar?</a>
+<a href="#" class="btn btn_n01" id="btn_03">Conoce los premios</a>
+<a href="#" class="btn btn_n01" id="btn_04">Invita a tus amigos</a>
+<br><br>
+<div class="txt_sub"> XX C&oacute;digos registrados</div>
+</div>
+
+<!-- **************************** box_08 ************************** -->
+
+<div id="box_08" class="box NDP">
+<div id="pt5"></div>
+<div class="txt_head txt_head2">CONOCE<br>LOS PREMIOS</div>
+<br>
+Durante el Festival Presidente<br>
+tendremos grandes premios<br>
+para el coro, &#161;con&oacute;celos!
+<br><br>
+<img src="img/btn_02.png">
+<img src="img/btn_03.png">
+<img src="img/btn_01.png">
+<br><br>
+<a href="#" class="btn" id="btn_01">Volver</a>
+</div>
+
+<!-- **************************** box_09 ************************** -->
+
+<div id="box_09" class="box NDP">
+<div style="width: 450px; text-align:left; margin:auto;">
+<div class="txt_head txt_head2">&#161;FELICIDADES!<br>GANASTE</div>
+<div class="preview">Un Par de Bocinas</div>
+&#161;Celebra con el coro!<br>
+<a href="#" style="float:left;" class="btn btn_n02" id="btn_01">COMPARTIR</a>
+<a href="#" style="float:right;" class="btn btn_n02" id="btn_02">CONTINUAR</a>
+</div>
+</div>
+
+<!-- **************************** box_10 ************************** -->
+
+<div id="box_10" class="box NDP">
+<div class="txt_head txt_head3">SELECCIONA D&Oacute;NDE CANJEARAS TU PREMIO:</div>
+<br><br>
+<div style="width:600px; margin:auto;">
+<div class="al_box">
+Santo Domingo:<br>
+<a href="#" class="btn btn_n01" id="btn_01">Moviemax Piantini</a><br>
+<a href="#" class="btn btn_n01" id="btn_02">Nacional 27 de Febrero</a><br>
+<a href="#" class="btn btn_n01" id="btn_03">Jumbo Luper&oacute;n</a><br>
+</div>
+<div class="al_box">
+Santiago:<br>
+<a href="#" class="btn btn_n01" id="btn_04">Moviemax Plaza Int.</a>
+</div>
+<div class="al_box">
+La Romana:<br>
+<a href="#" class="btn btn_n01" id="btn_05">Jumbo Romana</a>
+</div>
+<div class="al_box">
+San Pedro:<br>
+<a href="#" class="btn btn_n01" id="btn_06">Jumbo San Pedro</a>
+</div>
+</div>
+</div>
+
+<!-- **************************** pop_01 ************************** -->
+
+<div id="pop_01" class="pop NDP">
+<br><br><br><br><br><br>
+<div class="txt_head txt_head2">INSTRUCCIONES</div>
+<br><br>
+1) &#161;Abre una Cerveza Presidente y destapa el coro!
+<br><br>
+2) Ingresa el c&oacute;digo que encontrar&aacute;s en el interior<br>
+de la tapa de tu Cerveza Presidente
+<br><br>
+3) Destapa premios instant&aacute;neos o participa para<br>
+Meet and Greets y el Gran Premio Final.
+<br><br>
+4) &#161;Guarda tu tapa! Esta ser&aacute; necesaria para reclamar<br>
+el premio.
+<br><br>
+5) Sigue destapando el coro, &#161;mientras m&aacute;s c&oacute;digos<br>
+ingreses m&aacute;s oportunidades tienes de ganar Meet<br>
+and Greets y el Gran Premio Final!
+<br><br>
+<a href="#" class="btn2" id="btn_01">ACEPTAR</a>
+</div>
+
+<!-- **************************** pop_02 ************************** -->
+
+<div id="pop_02" class="pop NDP">
+<br><br><br><br><br><br>
+<div class="txt_head txt_head2">Acceder</div>
+<br><br>
+<input class="txt2" id="tt_01" type="text" tabindex=1 placeholder="C&Eacute;DULA"><br>
+<input class="txt2" id="tt_02" type="text" tabindex=2 placeholder="CONTRASE&Ntilde;A"><br>
+<a href="#" class="btn2" id="btn_01">ENTRAR</a><br><br>
+<a href="#" class="btn3" id="btn_02">&#191;OLVIDASTE TU CONTRASE&Ntilde;A?</a><br>
+<a href="#" class="btn3" id="btn_03">&#191;NO TIENES USUARIO?</a>
+</div>
+
+<!-- **************************** pop_03 ************************** -->
+
+<div id="pop_03" class="pop NDP">
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="txt_head txt_head2">&#161;Guarda tu Tapa!</div>
+<br>
+&#161;Este C&oacute;digo Est&aacute; Participando Para Met and Greets y el Gran Premio Final!
+<br>
+Mientras m&aacute;s c&oacute;digos ingreses, m&aacute;s oportunidades tienes de ganar
+<br><br>
+<a href="#" class="btn2" id="btn_01">CONTINUAR</a>
+</div>
+
+<!-- **************************** pop_04 ************************** -->
+
+<div id="pop_04" class="pop NDP">
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<div style="width: 690px; text-align:left; margin:auto;">
+<div class="txt_head">Vive todo el Festival<br>
+desde la misma tarima</div>
+<br>
+&#8226; Disfruta de la &uacute;ltima experiencia VIP del Festival:<br>
+&#8226; Ve acompa&ntilde;ado de un amigo cada d&iacute;a.<br>
+&#8226; Descansa en un hotel all inclusive durante todo el evento.<br>
+&#8226; &#161;Llega con estilo al Festival! Te llevaremos desde y hacia el hotel<br>
+durante los tres d&iacute;as.<br>
+&#8226; Asesor&iacute;a de Vestuario y maquillaje para ti y tus acompa&ntilde;antes.<br>
+<br><br>
+<a href="#" class="btn2" id="btn_01">CONTINUAR</a>
+</div>
+</div>
+
+<!-- **************************** pop_05 ************************** -->
+
+<div id="pop_05" class="pop NDP">
+<br><br><br><br><br><br><br><br><br><br><br><br>
+Debes llevar tu c&eacute;dula y tu tapa ganadora<br>
+al centro de canje que seleccionaste.
+<br><br>
+<a href="#" class="btn2" id="btn_01">VOLVER</a>
+</div>
+
+<!-- **************************** pop_07 ************************** -->
+
+<div id="pop_07" class="pop NDP">
+<br><br><br><br><br><br><br><br><br><br><br>
+<div class="txt_head txt_head2">Procesando C&oacute;digo</div>
+<br><br>
+<a href="#" class="btn2" id="btn_01">CONTINUAR</a>
+</div>
+
+<!-- **************************** pop_08 ************************** -->
+
+<div id="pop_08" class="pop NDP">
+<br><br><br><br><br><br><br><br><br><br><br>
+<div class="txt_head txt_head2">C&oacute;digo Validado</div>
+<br><br>
+<a href="#" class="btn2" id="btn_01">CONTINUAR</a>
+</div>
+
+<!-- **************************** pop_09 ************************** -->
+
+<div id="pop_09" class="pop NDP">
+<br><br><br><br><br><br><br><br><br><br><br>
+<div class="txt_head txt_head2">C&oacute;digo No V&aacute;lido</div>
+<br><br>
+<a href="#" class="btn2" id="btn_01">CONTINUAR</a>
+</div>
+
+</div>
+</body>
+</html>
